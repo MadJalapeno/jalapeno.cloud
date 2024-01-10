@@ -1,0 +1,47 @@
+<div class="navbar bg-base-100 col-span-1 shadow-lg xl:col-span-3 rounded-box">
+
+  <div class="flex-none">
+    <label for="my-drawer" class="btn btn-square btn-ghost drawer-button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </label>
+  </div>
+
+  <div class="flex-none px-2 mx-2">
+    <span class="text-lg font-bold">
+    <a class="btn btn-ghost text-xl">{{ site.title }}</a>
+    </span>
+  </div>
+
+  <div class="flex justify-center flex-1 px-2 mx-2">
+    <div class="items-stretch hidden lg:flex">
+    {%- for item in collections.page -%}
+      <a href="{{ item.url }}" class="btn btn-ghost btn-sm rounded-btn"> {{ item.data.title }} </a>
+    {%- endfor -%}
+    </div>
+  </div>
+
+  <div title="Change Theme" class="dropdown dropdown-end">
+    <div tabindex="0" class="m-1 normal-case btn-ghost btn">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current md:mr-2">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+      </svg>
+      <span class="hidden md:inline">
+        Change Theme
+      </span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" class="inline-block w-4 h-4 ml-1 fill-current">
+        <path d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"></path>
+      </svg>
+    </div>
+    <div class="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content h-96 w-52 z-[1] rounded-b-box bg-base-200 text-base-content">
+      <ul class="p-4 menu compact" data-controller="theme">
+        {%- for theme in site.themes -%}
+          <li>
+            <button data-set-theme="{{ theme }}" data-act-class="ACTIVECLASS">{{ theme }}</button>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</div>

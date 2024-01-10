@@ -1,0 +1,46 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{site.title}}{% if title %} - {{title}} {% endif %}</title>
+    <link rel="stylesheet" href="{{ '/static/tw-style.css' | url }}">
+<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <script>
+      document.documentElement.setAttribute('data-theme', window.localStorage.getItem('theme'))
+    </script>
+</head>
+
+<body>
+
+{% include "_navigation.njk" %}
+
+<div class="hero min-h-96 bg-base-200" style="background-image: url(https://miro.medium.com/v2/1*_rE5zXXVTZ_R4u-2FZh0iw.jpeg);">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-center text-neutral-content">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+      <p class="mb-5">{{ description }}</p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
+
+<div class="card w-96 bg-base-100 shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title">Card title!</h2>
+    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</div>
+
+  {% include "_footer.njk" %}
+
+  </body>
+</html>
+

@@ -1,0 +1,1 @@
+https://dev.to/psypher1/lets-learn-11ty-part-4-data-in-eleventy-6mo
