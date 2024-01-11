@@ -1,7 +1,7 @@
 ---
 ---
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="bumblebee">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,32 +15,29 @@
 </head>
 
 <body>
+<div class="grid grid-cols-12 gap-1 space-y-4">
 
+
+<div id="nav" class="col-span-12 container m-auto">  
+<!-- nav njk start -->  
 {% include "_navigation.njk" %}
-
-<div class="hero min-h-96 bg-base-200" style="background-image: url(https://miro.medium.com/v2/1*_rE5zXXVTZ_R4u-2FZh0iw.jpeg);">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-center text-neutral-content">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-      <p class="mb-5">{{ description }}</p>
-      <button class="btn btn-primary">Get Started</button>
-    </div>
-  </div>
+<!-- nav njk end -->
 </div>
 
-<div class="card w-96 bg-base-100 shadow-xl">
-  <div class="card-body">
-    <h2 class="card-title">Card title!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
-    </div>
-  </div>
+
+<div class="col-span-12 container m-auto">
+<!-- content njk start-->   
+{{ content | safe }}
+<!-- content njk end -->
 </div>
 
-  {% include "_footer.njk" %}
+<!-- footer -->
+<div class="col-span-12">
+{% include "_footer.njk" %}
+</div>
 
+
+</div>
   </body>
 </html>
 
